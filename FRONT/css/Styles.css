@@ -25,17 +25,24 @@ h1{
 label{
     font-size: 20px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:rgb(84, 3, 95);
+    color:rgb(64, 2, 72);
 }
 
 
 /*campos que devuelve la busqueda*/
-h2{
+#rickAndMortyInfo{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: block;
+    margin-left: 650px;
+    color:rgb(52, 1, 59);
     
 }
 
 /*imput para poner nombre personaje*/
 #rickAndMortyName{  
     border-radius: 3px;
+}
+
+button{
+    background-color:rgb(89, 214, 239);
 }
