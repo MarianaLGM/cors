@@ -13,8 +13,15 @@ app.use(cors())//le estamos diciendo que todas nuestra rutas pasen por CORS y pe
 
 //TRAER TODOS LOS PERSONAJES//
 app.get("/character", (req, res)=>{//accedemos a usuarios para que nos devuelva todo el json
-    
-
+    const url=(`https://rickandmortyapi.com/api/character`) 
+    try{
+        const response=axios.get(url)//ASINCRONÍA
+        const {name, status, species, gender, origin,image}=response.data
+ 
+        res.json({id,name, status, species, gender, origin,image})
+    }catch (ERROR){
+        res.status(404).json({error: "personaje no encontrado"})
+    }
 })
     
 
@@ -22,14 +29,14 @@ app.get("/character", (req, res)=>{//accedemos a usuarios para que nos devuelva 
 app.get("/character/:name", async (req, res)=>{
     const rickAndMortyName=req.params.name
 
-    const url=(`https://rickandmortyapi.com/api/character/${rickAndMortyName}`) 
+    const url=(`https://rickandmortyapi.com/api/character/?name=`) 
 
     //haremos un try and catch para manejo de errores:
     try{
         const response=await axios.get(url)//ASINCRONÍA
         const {name, status, species, gender, origin,image}=response.data
  
-        res.json({name, status, species, gender, origin,image})
+        res.json({id,name, status, species, gender, origin,image})
     }catch (ERROR){
         res.status(404).json({error: "personaje no encontrado"})
     }
