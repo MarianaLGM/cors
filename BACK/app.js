@@ -20,9 +20,9 @@ app.get("/character", (req, res)=>{//accedemos a usuarios para que nos devuelva 
 
 //TRAER SOLO UN PERSONAJE//
 app.get("/character/:name", async (req, res)=>{
-    const rickAndMortyName=req.params.name
+    const name=req.params.name
 
-    const url=(`https://rickandmortyapi.com/api/character/$${rickAndMortyName}`) 
+    const url=(`https://rickandmortyapi.com/api/character/${name}`) 
 
     //haremos un try and catch para manejo de errores:
     try{

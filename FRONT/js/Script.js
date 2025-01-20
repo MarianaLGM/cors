@@ -3,10 +3,10 @@ function getRickAndMortyInfo(){
     const rickAndMortyInfo= document.getElementById("rickAndMortyInfo")
 
     //vamos a pasar el nombre de esos pokemon a tolowercase, da igual que lo escribas en mayúsculas o minúsculas (para evitar errores siempre lo pasará a minúsculas)
-    const rickAndMortyName= rickAndMortyNameInput.value.toLocaleLowerCase()
+    const name= rickAndMortyNameInput.value.toLocaleLowerCase()
 
     //vamos a usar un fetch
-    fetch (`http://localhost:3000/character/${rickAndMortyName}`)
+    fetch (`http://localhost:3000/character/${name}`)
     .then (response=>response.json()) //lo que me tienes que hacer es pasarla respuesta a json
     .then (data =>{   
         console.log(data)
@@ -24,10 +24,11 @@ function getRickAndMortyInfo(){
         <h3>${origin}</h3>
         <img src="${image}" alt="${name}"/>
         `
-        })
+    })
+
 
     //ahora que ya tenemos todos los datos hacemos un catch para ver si hay algún error:
     .catch(error=>rickAndMortyInfo.innerHTML=`<p>imposible acceder al personaje</p>`)
 }
  
-      
+        
