@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rick&Morty</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <h1>Busca tu personaje favorito:</h1>
-    <label for="rickAndMortyName">Introduce el nombre de tu personaje</label>
-    <input type="text" id="rickAndMortyName" placeholder="Rick"/>
-    <button onclick="getRickAndMortyInfo()">Obtener información</button>
+    <img src="../FRONT/assets/img/foto.png" alt="Rick_and_Morty" id="imagenTitulo"/>  
+
+    <div id="contenedorBuscador">
+        <h1>Busca tu personaje favorito</h1>
+        <label for="rickAndMortyName">Introduce el nombre:</label>
+        <input type="text" id="rickAndMortyName" placeholder="Rick"/>
+        <button onclick="getRickAndMortyInfo()">Obtener información</button>
+    </div>
     <div id="rickAndMortyInfo"></div>
     <script src="./js/script.js"></script>
 </body>

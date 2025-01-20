@@ -1,0 +1,41 @@
+body{
+    background-image: url("https://wallpapers.com/images/high/rick-and-morty-4k-silhouettes-2uo1gq6dyn842hkc.webp");
+    background-size: cover;
+}
+
+/*titulo "busca tu personaje favorito"*/
+h1{
+    font-size: 35px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(84, 3, 95);
+}
+
+/*imagen titulo Rick&Morty*/
+#imagenTitulo{
+    margin-left: 300px;
+}
+
+/*contenedor buscador*/ 
+#contenedorBuscador{
+    display: block;
+    margin-left: 300px;
+}
+
+/*subtitulo, "introduce nombre personaje"*/
+label{
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(84, 3, 95);
+}
+
+
+/*campos que devuelve la busqueda*/
+h2{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+/*imput para poner nombre personaje*/
+#rickAndMortyName{  
+    border-radius: 3px;
+}
