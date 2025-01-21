@@ -24,6 +24,7 @@ function getRickAndMortyInfo(){
         <img src="${elements.image}" alt="${elements.name}"/>
         `
     })
+   
 })
     //ahora que ya tenemos todos los datos hacemos un catch para ver si hay algún error:
     .catch(error=>rickAndMortyInfo.innerHTML=`<p>imposible acceder al personaje</p>`)
