@@ -6,25 +6,25 @@ function getRickAndMortyInfo(){
     const rickAndMortyName= rickAndMortyNameInput.value.toLocaleLowerCase()
 
     //vamos a usar un fetch
-    fetch (`http://localhost:3000/character/${rickAndMortyName}`)
+    fetch (`http://localhost:3000/characters/${rickAndMortyName}`)
     .then (response=>response.json()) //lo que me tienes que hacer es pasarla respuesta a json
     .then (data =>{   
         console.log(data)
         console.log(data.results)
         //IMPORTANTE entre las llaves vamos a meter la línea 30 del BACK, donde el try
-        const {name, status, species, gender, origin, image}=data //lo único cambiamos response.data x sólo data
+        //const {name, status, species, gender, origin, image}=data //lo único cambiamos response.data x sólo data
         
         //vamos a hacer nuestro propio templete
+        data.results.forEach((elements) => {
         rickAndMortyInfo.innerHTML=`
-        <h2>${name}</h2>
-        <h3>${status}</h3>
-        <h3>${species}</h3>
-        <h3>${gender}</h3>
-        <h3>${origin}</h3>
-        <img src="${image}" alt="${name}"/>
+        <h2>${elements.name}</h2>
+        <h3>${elements.status}</h3>
+        <h3>${elements.species}</h3>
+        <h3>${elements.gender}</h3>
+        <img src="${elements.image}" alt="${elements.name}"/>
         `
     })
-
+})
     //ahora que ya tenemos todos los datos hacemos un catch para ver si hay algún error:
     .catch(error=>rickAndMortyInfo.innerHTML=`<p>imposible acceder al personaje</p>`)
 }
